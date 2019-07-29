@@ -1,0 +1,20 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+<form action='' method="POST">
+    <!-- コード入力エリア -->
+    <div id="editor">
+        {{ form.code }}
+        <div id="code" class="h-100"></div>
+    </div>
+
+    <!-- 出力表示エリア -->
+    <div id="output" class="bg-inverse">
+        <button type="submit" class="btn btn-warning">実行</button>
+        <pre class="text-white">{{ output }}</pre>
+         {% csrf_token %}
+    </div>   
+
+</form>
+
+{% endblock %}
